@@ -28,10 +28,18 @@ Sources (CSV, JSON)  →  BRONZE (copie exacte)  →  SILVER (nettoyé, Delta)  
 | `notebooks/TP2_banc_essai.py` | Banc d'essai : formats (CSV, JSON, Parquet, Delta), partitionnement, petits fichiers, fonctions Delta |
 | `notebooks/TP3_export_silver_powerbi.py` | Export des tables silver vers Excel pour Power BI (sans noms ni e-mails clients) |
 | `notebooks/TP3_modele_etoile.py` | Variante : modèle en étoile construit directement en gold dans Databricks |
-| `docs/` | Les trois rapports Word (TP1, TP2, TP3) et les captures |
+| `docs/` | Les trois rapports en Word et en PDF (lisibles directement sur GitHub) et les captures |
 | `scripts/`, `catalogue.yaml`, `requirements.txt` | Kit fourni par l'enseignant |
 
 Les fichiers `.py` du dossier `notebooks/` sont des notebooks Databricks : dans Databricks, **Espace de travail → Importer** pour les ouvrir.
+
+## Les rapports
+
+| TP | Lire en ligne (PDF) | Télécharger (Word) |
+| --- | --- | --- |
+| TP1 – Matrice usages, exigences, composants | [PDF](docs/TP1_matrice_usages_exigences_composants.pdf) | [Word](docs/TP1_matrice_usages_exigences_composants.docx) |
+| TP2 – Banc d'essai formats et partitionnement | [PDF](docs/TP2_banc_essai_formats_partitionnement.pdf) | [Word](docs/TP2_banc_essai_formats_partitionnement.docx) |
+| TP3 – Modèle en étoile et tableau de bord | [PDF](docs/TP3_modele_etoile_tableau_de_bord.pdf) | [Word](docs/TP3_modele_etoile_tableau_de_bord.docx) |
 
 ## Résultats principaux
 
