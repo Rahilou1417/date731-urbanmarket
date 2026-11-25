@@ -1,0 +1,57 @@
+# Catalogue des données UrbanMarket : une entrée par jeu de données
+- nom: ventes_brutes
+  zone: bronze
+  chemin: caisse/ventes/
+  description: Export brut quotidien des caisses et du site web, tel que reçu.
+  proprietaire: DSI - équipe intégration
+  sensibilite: interne
+  sources: [systeme_caisse, site_web]
+  retention: 5 ans
+- nom: clients_bruts
+  zone: bronze
+  chemin: crm/clients/
+  description: Export brut du CRM, contient des données personnelles.
+  proprietaire: Direction marketing
+  sensibilite: personnelle
+  sources: [crm]
+  retention: 3 ans après le dernier achat (RGPD)
+- nom: ventes
+  zone: silver
+  chemin: commerce/ventes/ventes.parquet
+  description: Ventes nettoyées, dédoublonnées, retours signalés.
+  proprietaire: Direction commerciale
+  sensibilite: interne
+  sources: [ventes_brutes]
+  retention: 5 ans
+- nom: clients
+  zone: silver
+  chemin: crm/clients/clients.parquet
+  description: Clients nettoyés. Accès restreint (données personnelles).
+  proprietaire: Direction marketing
+  sensibilite: personnelle
+  sources: [clients_bruts]
+  retention: 3 ans après le dernier achat (RGPD)
+- nom: ventes_pseudo
+  zone: silver
+  chemin: analytique/ventes_pseudo/ventes_pseudo.parquet
+  description: Ventes avec identifiant client pseudonymisé, pour les analystes.
+  proprietaire: Direction commerciale
+  sensibilite: interne
+  sources: [ventes]
+  retention: 5 ans
+- nom: fait_ventes
+  zone: gold
+  chemin: decisionnel/etoile/fait_ventes.parquet
+  description: Table de faits du modèle en étoile (une ligne par vente).
+  proprietaire: Contrôle de gestion
+  sensibilite: interne
+  sources: [ventes]
+  retention: 5 ans
+- nom: dim_client
+  zone: gold
+  chemin: decisionnel/etoile/dim_client.parquet
+  description: Dimension client minimisée (ville, tranche d'âge), sans donnée directement identifiante.
+  proprietaire: Direction marketing
+  sensibilite: interne
+  sources: [clients]
+  retention: 5 ans

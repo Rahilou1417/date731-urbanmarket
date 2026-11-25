@@ -1,0 +1,10 @@
+.env
+.venv/
+data/source/*.csv
+data/source/*.json
+data/banc/
+data/delta/
+lake/
+__pycache__/
+*.pyc
+.DS_Store
